@@ -1,0 +1,42 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	
+
+	function compareAnswer(userAnswer, answer) {
+
+		if (userAnswer == answer) {
+			alert("Все верно!");
+		} else {
+			alert ("Ты не прав!\nПравильный ответ " + answer);
+		}
+	}
+
+	function getRandomNumber(max) {
+		return Math.round(Math.random() * max)
+	}
+
+ 	function  generateRandomNubersArray (length) {
+ 		var arr = [];
+ 		for (var i = 0; i <length ; i++) {
+ 			var randomNumber = getRandomNumber(100);
+ 			arr.push(randomNumber);
+ 		}
+ 		return arr;
+ 	}
+// генерируем массив слуйчайныx чисел 
+	var numbers =  generateRandomNubersArray(5);
+	
+	alert("Запомните числа и их порядок: "  + numbers);
+
+	var userAnswer = +prompt("Каким было первое число? ");
+	compareAnswer(userAnswer, numbers[0])
+
+	userAnswer = +prompt("А последнее?");
+	compareAnswer(userAnswer, numbers [numbers.length - 1])
+	
+	var n = getRandomNumber(numbers.length - 1);
+	userAnswer = +prompt("А как насчет числа под номером " + (n+1) + "?");
+	compareAnswer(userAnswer, numbers [n])
+
+
+</script>
